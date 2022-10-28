@@ -1,0 +1,50 @@
+version: "3.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: help
+  steps:
+    - intent: help
+    - action: utter_capabilities
+    - action: utter_capability_get_xtracard_number
+    - action: utter_capability_get_latest_transactions
+    - action: utter_how_to_help
+
+- story: get xtracard number
+  steps:
+    - intent: get_xtra_card_number
+    - action: xtracard_form
+    - active_loop: xtracard_form
+
+- story: get latest transaction
+  steps:
+  - intent: get_latest_transaction
+  - action: latest_transaction_form
+  - active_loop: latest_transaction_form

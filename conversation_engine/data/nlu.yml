@@ -1,0 +1,125 @@
+version: "3.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - What is 2 + 2?
+    - Who's the US President?
+- intent: help
+  examples: |
+    - how can you help me?
+    - what can you do?
+    - what are you capable of?
+- intent: get_xtra_card_number
+  examples: |
+    - what is my extra card number?
+    - tell my xtracard number
+    - what's the number of my xtracard?
+    - give my extracard number
+    - tell me my xtracard number
+- intent: inform
+  examples: |
+    - My email is [example@example.com](email)
+    - [random@example.com](email)
+    - Email is [something@dummy.com](email)
+    - xtracard number is [1234567891](xtracard_number)
+    - my extra card number is [3438821234](xtracard_number)
+    - [1234897580](xtracard_number)
+    - [abc1@dummy.com][{"entity": "email"}, {"entity": "email"}]
+    - [1234567891][{"entity": "xtracard_number"}, {"entity": "xtracard_number"}]
+- intent: get_latest_transaction
+  examples: |
+    - get my last transaction
+    - show my latest transaction
+    - what was my last transaction?
+    - when was my latest transaction?
+    - when was my last transaction?
+    - get my latest transaction
+- regex: email
+  examples: |
+    - [a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+
+- regex: xtracard_number
+  examples: |
+    - \d{10}
